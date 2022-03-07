@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --body-bg-color: #dce4e3;
+  --green: #18c29c;
+  --light-green: #8ed7c6;
+  --light-grey: #dce4e3;
+  --text-color: #084236;
+}
+
+body {
+  font-family: poppins, sans-serif;
+  background-color: var(--body-bg-color);
+}
+.container {
+  display: flex;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+
+  margin-left: calc(90px + 10px);
+  margin-right: 20px;
+  transition: all 0.5s ease;
+}
+.container.open .content {
+  width: 100%;
+  margin-left: calc(370px + 20px);
+  margin-right: 20px;
+
+  transition: all 0.5s ease;
+}
+
+.sideBar {
+  position: absolute;
+  top: 0;
+  width: 78px;
+  height: 100vh;
+  background-color: var(--green);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.topSidebar {
+  display: grid;
+  flex-direction: column;
+  padding-left: 1.6rem;
+  padding-top: 5.5rem;
+  gap: 1rem;
+}
+
+/* Side Bar Open */
+
+.sideBar.open {
+  width: 370px;
+}
+
+/* */
+
+.menuSection {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.menuSection img {
+  width: 30px;
+  padding-top: 1.625rem;
+  margin-right: 1.6rem;
+}
+
+.sidebarItensSection {
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.sidebarItensSection input {
+  display: none;
+}
+.sidebarItensSection input::-webkit-input-placeholder {
+  color: black;
+  opacity: 0.7;
+}
+.sideBar p {
+  display: none;
+}
+.logoSection {
+  display: none;
+  position: absolute;
+  top: 2rem;
+}
+.sideBar.open p {
+  display: block;
+  margin-left: 1.5rem;
+}
+.sideBar.open .logoSection {
+  display: block;
+}
+
+#active {
+  width: 100%;
+  background-color: var(--light-green);
+  border-radius: 10px;
+  position: relative;
+  left: -12px;
+  padding-left: 12px;
+}
+.sidebarItensSection:hover {
+  background-color: var(--light-green);
+  border-radius: 10px;
+  position: relative;
+  left: -12px;
+  padding-left: 12px;
+}
+
+.bar {
+  background-color: var(--light-green);
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.barElements {
+  display: flex;
+  align-items: center;
+}
+
+.imageProfile {
+  display: none;
+  margin: 10px;
+  width: 3rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.nameProfile {
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.informationProfile p {
+  font-size: 14px;
+}
+.informationProfile {
+  display: none;
+}
+.btnOut {
+  cursor: pointer;
+  margin: 1rem auto;
+}
+.sideBar.open .btnOut {
+  margin-right: 1.5rem;
+}
+
+.sideBar.open .informationProfile {
+  display: block;
+}
+.sideBar.open .imageProfile {
+  display: block;
+  margin-left: 1.5rem;
+}
+
+.jobProfile {
+  display: none;
+}
+.sideBar.open .jobProfile {
+  margin: 0;
+  display: block;
+}
